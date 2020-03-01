@@ -1,0 +1,39 @@
+/* pages/show/show.wxss */
+
+.block {
+  padding: 30rpx 0rpx 0rpx 0rpx;
+}
+
+.time {
+  /* 字体大小 */
+ font-size: 14px; 
+ color: rgb(116, 112, 112); 
+ /* padding: 0px 5px 5px 0px; */
+ /* margin-top:20px; */
+ /* margin-left:10px; */
+}
+
+.content{
+  /* 和前后左右上线的距离 */
+  padding:15rpx 0rpx 0rpx 0rpx;
+}
+
+.line {
+  background: #EE7AE9;
+  width: 100%;
+  height: 4rpx;
+}
+
+.location{
+   font-size: 14px;
+   color: rgb(116, 112, 112); 
+}
+
+/* 想要设置全屏铺满的背景颜色，这种方式是最合适的 */
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/show/show",
+    "pages/cloud/cloud"
+    
+  ],
+  "window": {
+    "backgroundColor": "#f01450",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 5
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#8E388E",
+    "list": [
+      {
+        "pagePath": "pages/show/show",
+        "text": "发布",
+        "iconPath": "images/y13.png",
+        "selectedIconPath": "images/c7.png"
+      },
+      {
+        "pagePath": "pages/cloud/cloud",
+        "text": "新建",
+        "iconPath": "images/y14.png",
+        "selectedIconPath": "images/c6.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请确认授权"
+    }
+  }
+}

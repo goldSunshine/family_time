@@ -1,0 +1,33 @@
+<!--pages/show/show.wxml-->
+<view >
+<image class='background' src="../../images/bg4.jpg" mode="aspectFill"></image>
+<scroll-view scroll-y style="height:{{windowHeight}}px" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" >
+  <view wx:for="{{ content }}" wx:key='index'>
+      <view class="block">
+          <view >
+              <image src="{{ item.userinfo.avatarUrl }}" style="height:40rpx;width:40rpx;border-radius: 25px"></image>
+              <text class='time' >{{ item.time}}</text>
+          </view>
+          <view class='content'>
+               <rich-text class='content' nodes="{{ item.content }}"></rich-text>
+          </view>
+          <image src='../../images/location.png' style='height:35rpx;width:35rpx' ></image>
+          <text class='location'>{{ item.address }}</text>
+      </view>
+  </view>
+   <view class="body-view"  >
+        <loading hidden="{{hidden}}" bindchange="loadingChange">
+             加载中...
+        </loading>
+   </view>
+    
+  
+  <view hidden="{{ hasMoreData }}"  style="text-align: center"  >
+      <view class="line"></view>
+      <text >我也是有底线的~</text>
+  </view>
+  
+</scroll-view>
+
+
+</view>

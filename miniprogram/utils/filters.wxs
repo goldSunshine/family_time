@@ -1,0 +1,29 @@
+//日期格式化-------------------------------------------------------------
+var formatTime = function (strDate, format = "yyyy-MM-dd hh:mm:ss") {
+  // 解决ios出现NaN问题
+  var realDate = strDate ? getDate(strDate.replace(getRegExp('-', 'g'), '/')) : getDate();
+  var regYear = getRegExp("(y+)", "i");
+  var date = [
+    ["M+", realDate.getMonth() + 1],
+    ["d+", realDate.getDate()],
+    ["h+", realDate.getHours()],
+    ["m+", realDate.getMinutes()],
+    ["s+", realDate.getSeconds()],
+    ["q+", Math.floor((realDate.getMonth() + 3) / 3)],
+    ["S+", realDate.getMilliseconds()],
+  ];
+  var reg1 = regYear.exec(format);
+  if (reg1) {
+    format = format.replace(reg1[1], (realDate.getFullYear() + '').substring(4 - reg1[1].length));
+  }
+  for (var i = 0; i < date.length; i++) {
+    var reg2 = getRegExp("(" + date[i][0] + ")").exec(format);
+    if (reg2) {
+      format = format.replace(reg2[1], reg2[1].length == 1 ? v : ("00" + date[i][1]).substring(("" + date[i][1]).length));
+    }
+  }
+  return format;
+}
+module.exports = {
+  formatTime: formatTime,//日期格式化
+}
